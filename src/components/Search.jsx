@@ -3,12 +3,15 @@ import React from 'react';
 class Search extends React.Component {
   state = {
     search: '',
+    all: 'all',
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.searchMovies(this.state.search)
   }
+
+  
 
   render() {
     return (
@@ -26,6 +29,22 @@ class Search extends React.Component {
               />
               <label htmlFor="icon_prefix">Search...</label>
               <button className='btn btn_search' >Search</button>
+              <div>
+                <label>
+                  <input class="with-gap" name="type" type="radio" data-type="all"/>
+                  <span>All</span>
+                </label>
+
+                <label>
+                  <input class="with-gap" name="type" type="radio" data-type="movie"/>
+                  <span>Movies</span>
+                </label>
+
+                <label>
+                  <input class="with-gap" name="type" type="radio" data-type="series"/>
+                  <span>Series</span>
+                </label>
+              </div>
             </div>
           </div>
         </form>
