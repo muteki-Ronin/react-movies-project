@@ -1,17 +1,22 @@
-import React from 'react';
+import React from "react";
 
 class Search extends React.Component {
   state = {
-    search: '',
-    all: 'all',
-  }
+    search: "",
+    type: "all",
+  };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.searchMovies(this.state.search)
-  }
+    this.props.searchMovies(this.state.search, this.state.type);
+  };
 
-  
+  handleType = (event) => {
+    this.setState(
+      () => ({ type: event.target.dataset.type }),
+      () => this.props.searchMovies(this.state.search, this.state.type)
+    );
+  };
 
   render() {
     return (
@@ -25,23 +30,44 @@ class Search extends React.Component {
                 type="search"
                 className="validate"
                 value={this.state.search}
-                onChange={(event) => this.setState({ search: event.target.value })}
+                onChange={(event) =>
+                  this.setState({ search: event.target.value })
+                }
               />
               <label htmlFor="icon_prefix">Search...</label>
-              <button className='btn btn_search' >Search</button>
+              <button className="btn btn_search">Search</button>
               <div>
                 <label>
-                  <input class="with-gap" name="type" type="radio" data-type="all"/>
+                  <input
+                    className="with-gap"
+                    name="type"
+                    type="radio"
+                    data-type="all"
+                    onChange={this.handleType}
+                    checked={this.state.type === "all"}
+                  />
                   <span>All</span>
                 </label>
-
                 <label>
-                  <input class="with-gap" name="type" type="radio" data-type="movie"/>
+                  <input
+                    className="with-gap"
+                    name="type"
+                    type="radio"
+                    data-type="movie"
+                    onChange={this.handleType}
+                    checked={this.state.type === "movie"}
+                  />
                   <span>Movies</span>
                 </label>
-
                 <label>
-                  <input class="with-gap" name="type" type="radio" data-type="series"/>
+                  <input
+                    className="with-gap"
+                    name="type"
+                    type="radio"
+                    data-type="series"
+                    onChange={this.handleType}
+                    checked={this.state.type === "series"}
+                  />
                   <span>Series</span>
                 </label>
               </div>
@@ -49,7 +75,7 @@ class Search extends React.Component {
           </div>
         </form>
       </div>
-    )
+    );
   }
 }
 
