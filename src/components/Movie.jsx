@@ -1,6 +1,6 @@
 function Movie({ Title, Year, imdbID, Type, Poster }) {
   return (
-    <div id={imdbID} className="card movie">
+    <div id={imdbID} className="card movie z-depth-3">
       <div className="card-image waves-effect waves-block waves-light">
         {Poster === "N/A" ? (
           <img

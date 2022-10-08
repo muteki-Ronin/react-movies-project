@@ -35,7 +35,9 @@ class Search extends React.Component {
                 }
               />
               <label htmlFor="icon_prefix">Search...</label>
-              <button className="btn btn_search">Search</button>
+              <button className="btn btn_search light-blue lighten-1">
+                Search
+              </button>
               <div>
                 <label>
                   <input

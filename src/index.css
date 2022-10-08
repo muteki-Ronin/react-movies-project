@@ -24,8 +24,8 @@ nav {
 
 .btn_search {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 0.2rem;
+  right: 0.2rem;
 }
 
 label {
