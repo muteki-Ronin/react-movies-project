@@ -1,12 +1,14 @@
 // PARTS
 import Movie from "./Movie";
 
-function Movies({ movies }) {
+function Movies({ movies = [] }) {
   return (
     <div className="movies">
-      {movies.map((movie) => (
-        <Movie key={movie.imdbID} {...movie} />
-      ))}
+      {movies.length ? (
+        movies.map((movie) => <Movie key={movie.imdbID} {...movie} />)
+      ) : (
+        <h4>Nothing found!</h4>
+      )}
     </div>
   );
 }
