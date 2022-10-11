@@ -2,7 +2,7 @@
 
 ## **[React](https://ru.reactjs.org/)**
 
-## **[React "class component"](https://ru.reactjs.org/docs/components-and-props.html)**
+## **[React "components and props"](https://ru.reactjs.org/docs/components-and-props.html)**
 
 ## **[Materialize](https://materializecss.com/)**
 
